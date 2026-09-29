@@ -1,18 +1,16 @@
 Source: vyatta-cfg-system
-Section: contrib/net
+Section: net
 Priority: optional
-Maintainer: Vyatta Package Maintainers <DL-vyatta-help@att.com>
-Build-Depends:
+Maintainer: NuDanOS Maintainers <jon@fernandez.tech>
+Build-Depends: debhelper-compat (= 13),
  cpio,
- debhelper (>= 9.20160709),
- debhelper (>= 9.20160403~) | dh-autoreconf,
  dh-yang,
  libfile-slurp-perl,
  libfile-temp-perl,
  libipc-run3-perl,
  libnetaddr-ip-perl,
  libtest-mockobject-perl,
- pylint3,
+ pylint,
  python3-dbus,
  python3-gi,
  python3-vyatta-cfgclient,
@@ -24,9 +22,11 @@ Build-Depends:
  libtemplate-perl,
  libtest-tempdir-tiny-perl,
  libtest-mockmodule-perl,
- libtest-mockobject-perl,
  libarray-utils-perl
-Standards-Version: 3.9.6
+Standards-Version: 4.7.2
+Rules-Requires-Root: no
+Vcs-Git: https://github.com/nudanos/vyatta-cfg-system.git
+Vcs-Browser: https://github.com/nudanos/vyatta-cfg-system
 
 Package: vyatta-system-iommu-v1-yang
 Architecture: all
@@ -44,7 +44,7 @@ Description: vyatta-system-misc-v1 module
 
 Package: vyatta-system-network-v1-yang
 Architecture: all
-Depends:
+Depends: 
  vplane-config (>= 2.47),
  vyatta-dataplane-cfg-ip4-0,
  vyatta-dataplane-cfg-pb-vyatta:arp-0,
@@ -77,7 +77,7 @@ Description: vyatta-system-package-v1 module
 
 Package: vyatta-system
 Architecture: any
-Depends:
+Depends: 
  adduser,
  apt-transport-https,
  at,
@@ -139,7 +139,7 @@ Depends:
  ${misc:Depends},
  ${perl:Depends},
  ${shlibs:Depends}
-Breaks:
+Breaks: 
  vyatta-cfg-system (<< 1.6.0),
  vyatta-op (<< 1.0),
  vyatta-service-ntp (<< 0.3),
@@ -155,7 +155,7 @@ Description: System command helper scripts
 
 Package: vyatta-cfg-system
 Architecture: any
-Depends:
+Depends: 
  vyatta-interfaces-erspan-v1-yang,
  vyatta-interfaces-loopback-v1-yang,
  vyatta-interfaces-tunnel-v1-yang,

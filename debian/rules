@@ -44,4 +44,4 @@ override_dh_systemd_enable:
 
 
 %:
-	dh $@ --with autoreconf --with systemd --with=yang
+	dh $@ --with autoreconf --with yang
