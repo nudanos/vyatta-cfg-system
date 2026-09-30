@@ -128,9 +128,7 @@ Depends:
  vyatta-debian-system-config,
  vyatta-debian-systemd-config,
  vyatta-login,
- vyatta-ipmi,
  vyatta-opd,
- vyatta-platform-util,
  vyatta-util (>= 0.16),
  vyatta-forwarding,
  whois,
@@ -139,6 +137,10 @@ Depends:
  ${misc:Depends},
  ${perl:Depends},
  ${shlibs:Depends}
+Recommends:
+ freeipmi-tools,
+ vyatta-ipmi,
+ vyatta-platform-util
 Breaks: 
  vyatta-cfg-system (<< 1.6.0),
  vyatta-op (<< 1.0),
