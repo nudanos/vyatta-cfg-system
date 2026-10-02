@@ -45,7 +45,7 @@ Description: vyatta-system-misc-v1 module
 Package: vyatta-system-network-v1-yang
 Architecture: all
 Depends: 
- vplane-config (>= 2.47),
+ vplane-config (>= 2.47) | vyatta-kernel-forwarding,
  vyatta-dataplane-cfg-ip4-0 | vyatta-kernel-forwarding,
  vyatta-dataplane-cfg-pb-vyatta:arp-0 | vyatta-kernel-forwarding,
  vyatta-dataplane-cfg-pb-vyatta:ip6-0 | vyatta-kernel-forwarding,
