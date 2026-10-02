@@ -268,6 +268,23 @@ my %options = (
 exit __PACKAGE__->main()
     unless caller();
 
+# The Debian base, the running kernel and FRR. $root is "" on a live
+# system and a fixture directory in tests.
+sub print_base_versions {
+    my ($root) = @_;
+
+    my $debver = read_file( "$root/etc/debian_version", err_mode => 'quiet' )
+      // '';
+    chomp $debver;
+    print "Base:         Debian GNU/Linux $debver\n" if $debver ne '';
+    print "Kernel:       " . ( uname() )[2] . "\n";
+    my $frr = '';
+    run3( [ 'dpkg-query', "--admindir=$root/var/lib/dpkg", '-W',
+            '-f=${Version}', 'frr' ], \undef, \$frr, \undef );
+    print "FRR:          $frr\n" if $? == 0 && $frr ne '';
+    return;
+}
+
 sub main {
     my %rel_data = parse_key_values(read_file('/etc/os-release',
                                               err_mode => 'quiet'));
@@ -277,6 +294,7 @@ sub main {
         # fall-back to old-style version printing
         print( &echo_version_file() );
     }
+    print_base_versions('');
 
     my $ent = get_build_type();
     if ($ent) {

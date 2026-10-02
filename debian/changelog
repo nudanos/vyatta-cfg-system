@@ -1,3 +1,10 @@
+vyatta-cfg-system (2.38) trixie; urgency=medium
+
+  * vyatta-show-version: report the Debian base, the running kernel and
+    the installed FRR version (Base:, Kernel:, FRR: lines).
+
+ -- NuDanOS Maintainers <jon@fernandez.tech>  Fri, 02 Oct 2026 08:48:37 -0700
+
 vyatta-cfg-system (2.37) trixie; urgency=medium
 
   * vyatta-system: add the loopback stanza to /etc/network/interfaces in
