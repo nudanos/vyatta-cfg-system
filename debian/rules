@@ -24,6 +24,9 @@ override_dh_auto_install:
 	mv debian/vyatta-system/usr/share/configd debian/tmp/usr/share
 
 override_dh_installsystemd:
+	# the default Vyatta target (vyatta-base 90-vyatta.preset): enabled at install,
+	# as nothing applies presets when an image is built
+	dh_installsystemd --name=config-loaded --no-start
 	dh_installsystemd --name=vyatta-system.clear-system-config --no-start
 	dh_installsystemd --name=vyatta-system.generate-ssh-banner --no-start
 	dh_installsystemd --name=vyatta-system.system-configure --no-start

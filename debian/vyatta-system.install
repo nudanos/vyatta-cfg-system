@@ -1,5 +1,4 @@
 debian/clear-system-config.service /usr/lib/systemd/system/
-debian/config-loaded.target /usr/lib/systemd/system/
 debian/generate-ssh-banner.service /usr/lib/systemd/system/
 debian/modem-getty@.service /usr/lib/systemd/system/
 debian/system-configure.service /usr/lib/systemd/system/
