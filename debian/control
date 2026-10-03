@@ -22,7 +22,8 @@ Build-Depends: debhelper-compat (= 13),
  libtemplate-perl,
  libtest-tempdir-tiny-perl,
  libtest-mockmodule-perl,
- libarray-utils-perl
+ libarray-utils-perl,
+ tzdata <!nocheck>
 Standards-Version: 4.7.2
 Rules-Requires-Root: no
 Vcs-Git: https://github.com/nudanos/vyatta-cfg-system.git
