@@ -1,3 +1,10 @@
+vyatta-cfg-system (2.41) trixie; urgency=medium
+
+  * Run bash-syntax configd scripts with bash -c, not sh -c (dash): the
+    console device end script failed every boot commit.
+
+ -- NuDanOS Maintainers <jon@fernandez.tech>  Fri, 02 Oct 2026 20:11:04 -0700
+
 vyatta-cfg-system (2.40) trixie; urgency=medium
 
   * Install and enable config-loaded.target with dh_installsystemd: it was

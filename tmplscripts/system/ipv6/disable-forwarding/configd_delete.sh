@@ -1,5 +1,5 @@
 #!/bin/bash
-sh -c "echo 1 > /proc/sys/net/ipv6/conf/all/forwarding"
+bash -c "echo 1 > /proc/sys/net/ipv6/conf/all/forwarding"
 cd /proc/sys/net/ipv6/conf
 for i in * ; do
     if [[ "$i" == "default" ]] ||
@@ -11,7 +11,7 @@ for i in * ; do
 	sh -c "echo 0 > $i/forwarding"
     fi
 done
-sh -c "echo 1 > /proc/sys/net/ipv6/conf/default/forwarding"
+bash -c "echo 1 > /proc/sys/net/ipv6/conf/default/forwarding"
 #
 # If router advertisements were configured while global IPv6
 # forwarding was disabled, we will need to restart the radvd daemon
